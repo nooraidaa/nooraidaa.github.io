@@ -1,0 +1,159 @@
+body {
+  font-family: "Candara Light", Candara, Arial, sans-serif;
+  font-size: 18px;       /* perusleipä */
+  line-height: 1.6;
+  text-align: center;    /* kaikki tekstit keskitetty */
+  background-image: url("kuvat/tausta.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  cursor: url("kuvat/cursor.png") 16 16, auto;
+}
+
+a:hover,
+.nav img:hover {
+  cursor: url("kuvat/cursor-hover.png") 0 0, pointer;
+}
+
+
+.ylalogo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 150px;
+  height: auto;
+  transition: transform 0.2s;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  margin: 2rem auto;
+  max-width: 50%;
+  height: auto;
+}
+
+.teksti1968 {
+  display: block;
+  margin: 50px auto 50px auto; /* yläväli logosta, alaväli ennen palloja */
+  max-width: 60%;            /* säädä kuvan leveys */
+  height: auto;
+}
+
+/* NAVIGAATIO – pallot keskellä alussa */
+.nav {
+  display: flex;
+  flex-direction: row;       /* rivissä */
+  justify-content: center;   /* keskellä vaakasuunnassa */
+  gap: 2rem;                 /* väli pallojen väliin */
+  margin-top: 3rem;
+  transition: all 0.5s ease; /* pehmeä siirtymä */
+}
+
+.nav a {
+ display: inline-block;
+}
+
+.nav img {
+  width: 300px;              /* normaalikoko */
+  height: auto;
+  cursor: pointer;
+  transition: all 0.5s ease; /* pehmeät muutokset koossa ja sijainnissa */
+  transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.nav img:hover {
+  transform: scale(1.1);     /* pieni suurennus hoverissa */
+}
+
+/* SHRINK – kun käyttäjä scrollaa alas */
+.nav.shrink {
+  position: fixed;           /* jää näkyviin yläreunaan */
+  top: 10px;                 
+  left: 10px;                
+  margin-top: 0;
+
+  display: flex;
+  flex-direction: column;    /* allekkain */
+  align-items: flex-start;   /* vasempaan reunaan */
+  gap: 1.5rem;                  /* väli pallojen väliin */
+
+  padding: 0.25rem 0;
+  background: transparent;   
+  z-index: 1000;
+}
+
+.nav.shrink img {
+  width: 150px;               /* pallot pienenevät */
+}
+
+/* Content-boxit (kaikille sama pohja) */
+.content-box1,
+.content-box2,
+.content-box3,
+.content-box4,
+.content-box5 {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 2rem;
+  margin: 10% auto;
+  width: 90%;
+  max-width: 70%;
+  min-width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  scroll-margin-top: 20vh;
+}
+
+/* Otsikot ja tekstit */
+.content-box1 h2,
+.content-box2 h2,
+.content-box3 h2,
+.content-box4 h2,
+.content-box5 {
+  font-size: 24px;
+  text-decoration: underline;
+  margin-bottom: 1rem;
+}
+
+.content-box1 h3,
+.content-box2 h3,
+.content-box3 h3,
+.content-box4 h3,
+.content-box5 h3 {
+  font-size: 20px;
+  margin-bottom: 1rem;
+}
+
+.content-box1 p,
+.content-box2 p,
+.content-box3 p,
+.content-box4 p,
+.content-box5 p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;   /* oikea alakulma */
+  width: 50px;
+  height: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.3s ease;
+  z-index: 1100;
+
+  /* käytetään omaa kursoria */
+  cursor: url("kuvat/cursor-hover.png") 16 16, auto;
+}
+
+#backToTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+}
