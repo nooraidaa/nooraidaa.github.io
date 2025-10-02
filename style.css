@@ -260,11 +260,8 @@ a:hover,
   }
 
   .nav.shrink {
-  position: static !important;
-  flex-direction: unset !important;
-  display: grid !important;
-}
-
+    position: static !important;
+    flex-direction: unset;
   }
 
   .content-box4 iframe {
