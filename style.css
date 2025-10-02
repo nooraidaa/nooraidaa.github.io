@@ -210,8 +210,12 @@ a:hover,
   }
 
   .nav.shrink {
-    position: static !important;
-    flex-direction: unset;
+  position: static !important;
+  flex-direction: unset !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
   }
 }
 
@@ -256,8 +260,11 @@ a:hover,
   }
 
   .nav.shrink {
-    position: static !important;
-    flex-direction: unset;
+  position: static !important;
+  flex-direction: unset !important;
+  display: grid !important;
+}
+
   }
 
   .content-box4 iframe {
