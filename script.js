@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
-  
+
   function smoothScrollTo(targetY, duration = 800) {
     const startY = window.scrollY;
     const diff = targetY - startY;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     requestAnimationFrame(step);
   }
-
+  
   document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');
@@ -43,17 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
       if (nav && !nav.classList.contains('shrink')) {
         nav.classList.add('shrink');
       }
-      
+
       const mid = target.offsetTop + target.offsetHeight / 2;
       const top = mid - window.innerHeight / 2;
 
-      smoothScrollTo(top, 1000);
+      smoothScrollTo(top, 1000); //
     });
   });
-  
+
   const backToTop = document.getElementById('backToTop');
   if (backToTop) {
-    
     window.addEventListener('scroll', () => {
       if (window.scrollY > 300) {
         backToTop.classList.add('show');
