@@ -158,31 +158,155 @@ a:hover,
   transform: scale(1.1);
 }
 
-/* --- Puhelinnäkymä: pallot kahdessa rivissä --- */
+/* Mobiilinäkymä */
 @media (max-width: 768px) {
+
+  /* Navigaatiopallot kahdelle riville */
   .nav {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* kaksi saraketta */
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr); /* kaksi vierekkäin */
+    gap: 1.5rem;
     justify-items: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    position: static !important; /* EI shrink bouncea */
   }
 
+  .teksti1968 {
+    display: block;
+    margin: 20px auto 20px auto;
+    max-width: 90%;
+    height: auto;
+  }
+ 
   .nav img {
-    width: 100px; /* sopiva koko mobiilissa */
+    max-width: 70%;
+    height: auto;
   }
 
-  /* Poistetaan shrink-puoli mobiilissa */
+  /* Content-boxit */
+  .content-box1,
+  .content-box2,
+  .content-box3,
+  .content-box4 {
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Logo & otsikko */
+  .logo {
+    max-width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .ylalogo {
+    max-width: 70px;
+    top: 10px;
+    left: 10px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  /* Google Maps iframe */
+  .content-box4 iframe {
+    width: 100% !important;
+    height: 300px;
+    border-radius: 12px;
+  }
+
+  /* Estetään shrink mobiilissa */
   .nav.shrink {
-    position: static;   /* ei fixed */
-    flex-direction: initial;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  .nav.shrink img {
-    width: 80px; /* pienemmät mutta silti ruudukossa */
+    position: static !important;
+    flex-direction: unset;
   }
 }
 
+/* Tablet (769px–1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    display: flex;              /* yksi rivi */
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    position: static !important; /* EI shrink bouncea */
+  }
+
+  .nav img {
+    max-width: 200px;  /* vähän isommat kuin mobiilissa */
+    height: auto;
+  }
+
+  .teksti1968 {
+    display: block;
+    margin: 15px auto 15px auto;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .ylalogo {
+    max-width: 110px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .content-box1,
+  .content-box2,
+  .content-box3,
+  .content-box4 {
+    width: 85%;
+    margin: 2rem auto;
+    font-size: 1.1rem;
+  }
+
+  .logo {
+    max-width: 60%;
+  }
+
+  .nav.shrink {
+    position: static !important;
+    flex-direction: unset;
+  }
+
+  .content-box4 iframe {
+    width: 100% !important;
+    height: 300px;
+    border-radius: 12px;
+  }
+}
+
+/* Desktop (>1024px) */
+@media (min-width: 1025px) {
+  .nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav img {
+    max-width: 300px;
+    transition: transform 0.2s;
+  }
+
+  .nav img:hover {
+    transform: scale(1.1);
+  }
+
+  /* Shrink toimii vain desktopilla */
+  .nav.shrink {
+    position: fixed;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
