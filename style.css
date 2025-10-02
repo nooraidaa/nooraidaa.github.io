@@ -298,4 +298,10 @@ a:hover,
     gap: 1rem;
     padding: 1rem;
   }
+
+  .content-box4 iframe {
+    width: 70% !important;
+    height: 450px;
+    border-radius: 12px;
+  }
 }
