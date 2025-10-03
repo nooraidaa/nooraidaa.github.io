@@ -152,6 +152,7 @@ a:hover,
   transform: scale(1.1);
 }
 
+/* Mobiilinäkymä */
 @media (max-width: 768px) {
 
   .nav {
@@ -166,7 +167,7 @@ a:hover,
   .teksti1968 {
     display: block;
     margin: 20px auto 20px auto;
-    max-width: 90%;
+    max-width: 100%;
     height: auto;
   }
  
@@ -216,12 +217,12 @@ a:hover,
   grid-template-columns: repeat(2, 1fr) !important;
 }
 
-  }
 }
 
+/* Tablet (769px–1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .nav {
-    display: flex; 
+    display: flex;
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
@@ -271,6 +272,7 @@ a:hover,
   }
 }
 
+/* Desktop (>1024px) */
 @media (min-width: 1025px) {
   .nav {
     display: flex;
@@ -289,6 +291,7 @@ a:hover,
     transform: scale(1.1);
   }
 
+  /* Shrink toimii vain desktopilla */
   .nav.shrink {
     position: fixed;
     top: 0;
