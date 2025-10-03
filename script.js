@@ -1,15 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.nav');
   const threshold = 120;
+  const backToTop = document.getElementById('backToTop');
 
-  // --- Shrink-nav scrollissa ---
-  if (nav) {
-    const onScroll = () => nav.classList.toggle('shrink', window.scrollY > threshold);
-    onScroll();
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  // --- Custom smooth scroll funktio (easeInOutCubic) ---
   function smoothScrollTo(targetY, duration = 800) {
     const startY = window.scrollY;
     const diff = targetY - startY;
@@ -33,7 +26,24 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(step);
   }
 
-  // --- Klikkaus navigaatiopalloihin ---
+  const onScroll = () => {
+    // Shrink nav
+    if (nav) {
+      nav.classList.toggle('shrink', window.scrollY > threshold);
+    }
+
+    if (backToTop) {
+      if (window.scrollY > 300) {
+        backToTop.classList.add('show');
+      } else {
+        backToTop.classList.remove('show');
+      }
+    }
+  };
+
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
   document.querySelectorAll('.nav a[href^="#"]').forEach(link => {
     link.addEventListener('click', e => {
       const href = link.getAttribute('href');
@@ -44,34 +54,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
       e.preventDefault();
 
-      // Jos nav ei vielä shrinkannut, shrinkkaa se
       if (nav && !nav.classList.contains('shrink')) {
         nav.classList.add('shrink');
       }
-
-      // Laske kohteen keskikohta
+      
       const mid = target.offsetTop + target.offsetHeight / 2;
       const top = mid - window.innerHeight / 2;
 
-      smoothScrollTo(top, 1000); // scrollaa 1 sekunnissa
+      smoothScrollTo(top, 800);
     });
   });
-
-  // --- Back to top -nappi ---
-  const backToTop = document.getElementById('backToTop');
+  
   if (backToTop) {
-    // Näytetään nappi kun scrollattu alas
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 300) {
-        backToTop.classList.add('show');
-      } else {
-        backToTop.classList.remove('show');
-      }
-    });
-
-    // Klikkaus -> scrollaa ylös smoothilla easingillä
     backToTop.addEventListener('click', () => {
-      smoothScrollTo(0, 1000);
+      smoothScrollTo(0, 800);
     });
   }
 });
