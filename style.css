@@ -7,12 +7,12 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  cursor: url("kuvat/cursor.png") 16 16, auto;
+  cursor: url("kuvat/cursor.webp") 16 16, auto;
 }
 
 a:hover,
 .nav img:hover {
-  cursor: url("kuvat/cursor-hover.png") 0 0, pointer;
+  cursor: url("kuvat/cursor-hover.webp") 0 0, pointer;
 }
 
 
