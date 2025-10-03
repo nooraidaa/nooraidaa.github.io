@@ -1,8 +1,8 @@
 body {
-  font-family: "Candara Light", Candara, Arial, sans-serif;
-  font-size: 18px;
+  font-family: "Candara Light", Candara;
+  font-size: 18px;       /* perusleipä */
   line-height: 1.6;
-  text-align: center;
+  text-align: center;    /* kaikki tekstit keskitetty */
   background-image: url("kuvat/tausta.jpg");
   background-size: cover;
   background-position: center;
@@ -25,6 +25,7 @@ a:hover,
   transition: transform 0.2s;
 }
 
+/* Logo */
 .logo {
   display: block;
   margin: 2rem auto;
@@ -34,18 +35,19 @@ a:hover,
 
 .teksti1968 {
   display: block;
-  margin: 50px auto 50px auto;
-  max-width: 60%;
+  margin: 50px auto 50px auto; /* yläväli logosta, alaväli ennen palloja */
+  max-width: 60%;            /* säädä kuvan leveys */
   height: auto;
 }
 
+/* NAVIGAATIO – pallot keskellä alussa */
 .nav {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2rem;
+  flex-direction: row;       /* rivissä */
+  justify-content: center;   /* keskellä vaakasuunnassa */
+  gap: 2rem;                 /* väli pallojen väliin */
   margin-top: 3rem;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease; /* pehmeä siirtymä */
 }
 
 .nav a {
@@ -53,27 +55,28 @@ a:hover,
 }
 
 .nav img {
-  width: 300px;
+  width: 300px;              /* normaalikoko */
   height: auto;
   cursor: pointer;
-  transition: all 0.5s ease;
+  transition: all 0.5s ease; /* pehmeät muutokset koossa ja sijainnissa */
   transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 .nav img:hover {
-  transform: scale(1.1);
+  transform: scale(1.1);     /* pieni suurennus hoverissa */
 }
 
+/* SHRINK – kun käyttäjä scrollaa alas */
 .nav.shrink {
-  position: fixed;
+  position: fixed;           /* jää näkyviin yläreunaan */
   top: 10px;                 
   left: 10px;                
   margin-top: 0;
 
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1.5rem;
+  flex-direction: column;    /* allekkain */
+  align-items: flex-start;   /* vasempaan reunaan */
+  gap: 1.5rem;                  /* väli pallojen väliin */
 
   padding: 0.25rem 0;
   background: transparent;   
@@ -81,9 +84,10 @@ a:hover,
 }
 
 .nav.shrink img {
-  width: 150px;
+  width: 150px;               /* pallot pienenevät */
 }
 
+/* Content-boxit (kaikille sama pohja) */
 .content-box1,
 .content-box2,
 .content-box3,
@@ -100,6 +104,7 @@ a:hover,
   scroll-margin-top: 20vh;
 }
 
+/* Otsikot ja tekstit */
 .content-box1 h2,
 .content-box2 h2,
 .content-box3 h2,
@@ -132,7 +137,7 @@ a:hover,
 #backToTop {
   position: fixed;
   bottom: 20px;
-  right: 20px;
+  right: 20px;   /* oikea alakulma */
   width: 50px;
   height: auto;
   opacity: 0;
@@ -140,6 +145,7 @@ a:hover,
   transition: opacity 0.4s ease, transform 0.3s ease;
   z-index: 1100;
 
+  /* käytetään omaa kursoria */
   cursor: url("kuvat/cursor-hover.png") 16 16, auto;
 }
 
@@ -155,13 +161,14 @@ a:hover,
 /* Mobiilinäkymä */
 @media (max-width: 768px) {
 
+  /* Navigaatiopallot kahdelle riville */
   .nav {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* kaksi vierekkäin */
     gap: 1.5rem;
     justify-items: center;
     margin-top: 1.5rem;
-    position: static !important;
+    position: static !important; /* EI shrink bouncea */
   }
 
   .teksti1968 {
@@ -176,6 +183,7 @@ a:hover,
     height: auto;
   }
 
+  /* Content-boxit */
   .content-box1,
   .content-box2,
   .content-box3,
@@ -187,6 +195,7 @@ a:hover,
     line-height: 1.6;
   }
 
+  /* Logo & otsikko */
   .logo {
     max-width: 60%;
     margin: 0 auto;
@@ -204,6 +213,7 @@ a:hover,
     text-align: center;
   }
 
+  /* Google Maps iframe */
   .content-box4 iframe {
     width: 100% !important;
     height: 300px;
@@ -214,23 +224,23 @@ a:hover,
   position: static !important;
   flex-direction: unset !important;
   display: grid !important;
-  grid-template-columns: repeat(2, 1fr) !important;
+  grid-template-columns: repeat(2, 1fr) !important; /* aina kaksi vierekkäin */
 }
 
 }
 
 /* Tablet (769px–1024px) */
-@media (min-width: 769px) and (max-width: 1366px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .nav {
-    display: flex;
+    display: flex;              /* yksi rivi */
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
-    position: static !important;
+    position: static !important; /* EI shrink bouncea */
   }
 
   .nav img {
-    max-width: 200px;
+    max-width: 200px;  /* vähän isommat kuin mobiilissa */
     height: auto;
   }
 
