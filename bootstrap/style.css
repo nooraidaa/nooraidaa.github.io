@@ -1,0 +1,155 @@
+body {
+    background-color: #ffdde2;
+    color: black;
+}
+
+/* === KURO === */
+.kuro-page .row > .col {
+    height: 150px;
+}
+
+.kuro-page .color-1 {
+    background-color: #000;
+}
+
+.kuro-page .color-2 {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.kuro-page .color-3 {
+    background-color: #808080;
+}
+
+.kuro-page .color-4 {
+    background-color: rgb(221, 137, 203);
+}
+
+.kuro-page .color-5 {
+    background-color: rgb(122, 204, 122);
+}
+
+/* === KARUSELLI KURO === */
+.kuro-page .carousel-small {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.kuro-page .carousel-small .carousel-inner {
+    height: 400px;
+}
+
+.kuro-page .carousel-small .carousel-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* NUOLET KURO */
+.kuro-page .carousel-control-prev,
+.kuro-page .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* === ELMI === */
+.elmi-page .row > .col {
+    height: 150px;
+}
+
+.elmi-page .color-1 {
+    background-color: #000;
+}
+
+.elmi-page .color-2 {
+    background-color: rgb(99, 77, 53);
+    color: #000;
+}
+
+.elmi-page .color-3 {
+    background-color: rgb(219, 195, 163);
+}
+
+.elmi-page .color-4 {
+    background-color: rgb(221, 137, 203);
+}
+
+.elmi-page .color-5 {
+    background-color: rgb(115, 156, 115);
+}
+
+/* === KARUSELLI ELMI === */
+.elmi-page .carousel-small {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.elmi-page .carousel-small .carousel-inner {
+    height: 400px;
+}
+
+.elmi-page .carousel-small .carousel-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*  NUOLET ELMI */
+.elmi-page .carousel-control-prev,
+.elmi-page .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* === MESI === */  
+
+.mesi-page .row > .col {
+    height: 150px;
+}
+
+.mesi-page .color-1 {
+    background-color: rgb(65, 65, 65);
+}
+
+.mesi-page .color-2 {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.mesi-page .color-3 {
+    background-color: #bea396;
+}
+
+.mesi-page .color-4 {
+    background-color: rgb(221, 137, 203);
+}
+
+.mesi-page .color-5 {
+    background-color: rgb(104, 143, 104);
+}
+
+/* === KARUSELLI MESI === */
+.mesi-page .carousel-small {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.mesi-page .carousel-small .carousel-inner {
+    height: 400px;
+}
+
+.mesi-page .carousel-small .carousel-item img {
+    height: 400px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* NUOLET MESI */
+.mesi-page .carousel-control-prev,
+.mesi-page .carousel-control-next {
+    top: 50%;
+    transform: translateY(-50%);
+}   
